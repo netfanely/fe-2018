@@ -10,4 +10,6 @@ Sabado 20 Outubro 2018
 
 ** leer documento para validar recuadros.
 ** mejora visual com imagenes (tema hospital)
-** Que la pagina sea responsiva.
+** Que la pagina sea responsiva. --> BULMA.IO
+
+
