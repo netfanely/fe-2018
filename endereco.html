@@ -2,10 +2,10 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 <script type="text/javascript">
-    var urls = new Array("nomes.html");
+    var urls = new Array("eletro.html");
     function nextpage(){
-        //nomes.html
         window.location = urls[Math.floor(urls.length*Math.random())];
     }
     function returnpage(a){
@@ -46,17 +46,19 @@
 <H1>CADASTRO DE PACIENTES</H1>
     </center>
 <BR>
-<CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | Enderecos | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER>
+<h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | Enderecos | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<form action="#" method="get">
+<div id="area"></div>
+<form id="formulario" action="eletro.html" method="POST" name="myForm">
+    <fieldset>
 <table align="center">
-<th>Enderecos</th>
+<th><legend>Enderecos</legend></th>
 <tr>
-<td colspan="2">Tipo de endereco</td>
+<td colspan="2"><label>Tipo de endereco</label></td>
 </tr>
 <tr>
-<td colspan="2"><input list="dirs" name="dir" id="dir" />
-    <datalist id="dirs">
+<td colspan="2"><input class="tende" list="tende" name="dir" id="dir" />
+    <datalist id="tende">
       <option value="Comercial" />
       <option value="Correio ou postal" />
       <option value="Residencial" />
@@ -66,40 +68,40 @@
 </td>    
 </tr>
 <tr>
-  <td colspan="2"><br>Data Inicial</td>
+  <td colspan="2"><br><label>Data Inicial</label></td>
 </tr>
 <tr>
-   <td colspan="2"><input type="text" value="mm/dd/aaaa"></td>
+   <td colspan="2"><input class="dini" type="text" value="mm/dd/aaaa"></td>
 </tr>
 <tr>
-   <td colspan="2"><br>Iniciador de acuracia</td>
+   <td colspan="2"><br><label>Iniciador de acuracia</label></td>
 </tr>
 <tr>
-   <td colspan="2">Dia:<input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+   <td colspan="2"><label>Dia:</label><input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
 </tr>
 <tr>
-   <td colspan="2">Mes:<input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+   <td colspan="2"><label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
 </tr>
 <tr>
-   <td colspan="2">Ano:<input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+   <td colspan="2"><label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
 </tr>
 <tr>
-        <td colspan="2"><br>Data Final</td>
+        <td colspan="2"><br><label>Data Final</label></td>
       </tr>
       <tr>
          <td colspan="2"><input type="text" value="mm/dd/aaaa"></td>
       </tr>
       <tr>
-         <td colspan="2"><br>Iniciador de acuracia</td>
+         <td colspan="2"><br><label>Iniciador de acuracia</label></td>
       </tr>
       <tr>
-         <td colspan="2">Dia:<input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+         <td colspan="2"><label>Dia:</label><input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
       </tr>
       <tr>
-         <td colspan="2">Mes:<input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+         <td colspan="2"><label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
       </tr>
       <tr>
-         <td colspan="2">Ano:<input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
+         <td colspan="2"><label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
       </tr>
       
 
@@ -111,24 +113,29 @@
         <tr>
             
             <td colspan="2"><div align="center" style="padding-right: 20pt;">
-                <input value="Limpar" type="reset"></div></td>
+                <input class="btn_limpar" value="Limpar" type="reset"></div></td>
             <td colspan="2"><div align="center" style="padding-left: 20pt;">
-                <input value="Enviar" type="submit" onclick="submitform()"></div>
+                <input class="btn_enviar" value="Enviar" type="submit" onclick="submitform()"></div>
                 <iframe id="conteudo" style="display: none"></iframe></td>
             
         </tr>
-    </table>
+    </table></fieldset>
     <table width="100%">
+            <th><td><br></td><td></td></th>
+            <th><td><br></td><td></td></th>
         <tr>
-            <td><div align="left" style="padding-left: 50pt;">
-                <input value="Retornar" type="button" onclick="returnpage(-1)"></div>
+            <td><div align="left" style="padding-left: 0pt;">
+                <input class="btn_return" value="Retornar" type="button" onclick="returnpage(-1)"></div>
             </td>
-            <td><div align="right" style="padding-right: 50pt;">
-                <input value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+            <td><div align="right" style="padding-right: 0pt;">
+                <input class="btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
             </td>
         </tr>
     </table>
-    <!-- fim botones --></form>
+    </div>
+    
+    <!-- fim botones -->
+    </form>
 </BODY>
 </HTML>
 

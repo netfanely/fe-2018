@@ -2,17 +2,16 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 <script type="text/javascript">
-    var urls = new Array("nomes.html");
+    var urls = new Array("endereco.html");
     function nextpage(){
-        //nomes.html
         window.location = urls[Math.floor(urls.length*Math.random())];
     }
     function returnpage(a){
         //pagina anterior
         history.go(a);
     }
-
     function submitform(){
         alert("Sending Json");
         var xhr = new XMLHttpRequest();
@@ -47,72 +46,76 @@
 <H1>CADASTRO DE PACIENTES</H1>
     </center>
 <BR>
-<CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER>
+<h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<form action="#" method="get">
+<div id="area">
+<form id="formulario" action="endereco.html" method="POST" name="myForm">
+    <fieldset>
 <table align="center">
-<th>Dados demograficos</th>
+<th colspan="2"><legend>Dados demograficos</legend></th>
 <tr>
-<td colspan="2">Mae</td>
+<td colspan="2"><label>Mae</label></td>
 </tr>
 <tr>
-<td colspan="2"><input type="text" name="mae" value="nome completo da mae" size="80"/></td>
+<td colspan="2"><input class="mae" type="text" name="mae" value="nome completo da mae" size="50"/></td>
 </tr>
 <tr>
-<td colspan="2">Pai</td><td>Sufixo</td>
+<td colspan="2"><label>Pai</label></td><td><label>Sufixo</label></td>
 </tr>
 <tr>
-<td colspan="2"><input type="text" name="pai" value="nome completo do pai" size="80"/></td><td><input type="text" name="sufixo" value="Junior, Filho, ..." /></td>
+<td colspan="2"><input class="mae" type="text" name="pai" value="nome completo do pai" size="50"/></td><td><input type="text" name="sufixo" value="Junior, Filho, ..." /></td>
 </tr>
 <tr>
-<td colspan="2">Situacao familiar (convive com)</td>
+<td colspan="2"><label>Situacao familiar (convive com)</label></td>
 </tr>
 <tr>
-<td>
-<input type="checkbox" name="opc1" value="semfilhos">
+<td colspan="2">
+<input class="opc1" type="checkbox" name="opc1" value="semfilhos">
 <label for="semfilhos">companheiro(a) com lacos conjugais e sem filhos</label><br>
-<input type="checkbox" name="opc2" value="familiares">
+<input class="opc2" type="checkbox" name="opc2" value="familiares">
 <label for="familiares"></label>companheiro(a) com filho(s) e/ou outro(s) familiar(es)</label><br>
-<input type="checkbox" name="opc3" value="companheiro">
+<input class="opc3" type="checkbox" name="opc3" value="companheiro">
 <label for="companheiro"></label>familiar(es) sem companheiro(a)</label><br>
-<input type="checkbox" name="opc4" value="conjugais">
+<input class="opc4" type="checkbox" name="opc4" value="conjugais">
 <label for="conjugais"></label>outra(s) pessoa(s) sem lacos consaguineos e/ou lacos conjugais</label><br>
-<input type="checkbox" name="opc5" value="so">
+<input class="opc5" type="checkbox" name="opc5" value="so">
 <label for="so">vive so</label><br>
-
 </td>
 </tr>
 <tr>
-    <td>Data de nascimento</td><td></td>
+    <td><label>Data de nascimento</label></td><td><input type="text" name="dir" id="dir" value="mm/dd/aaaa" /></td>
 </tr>
-<tr><td><input type="text" name="dir" id="dir" value="mm/dd/aaaa" />
-</td><td></td></tr>
 </table>
 <!-- botones -->
 <table align="center" border="0">
+    <th><td><br></td><td></td></th>
+    <th><td><br></td><td></td></th>
+    <tr>
+        
+        <td colspan="2"><div align="center" style="padding-right: 20pt;">
+            <input class="btn_limpar" value="Limpar" type="reset"></div></td>
+        <td colspan="2"><div align="center" style="padding-left: 20pt;">
+            <input class="btn_enviar" value="Enviar" type="submit" onclick="submitform()"></div>
+            <iframe id="conteudo" style="display: none"></iframe></td>
+        
+    </tr>
+</table></fieldset>
+<table width="100%">
         <th><td><br></td><td></td></th>
         <th><td><br></td><td></td></th>
-        <tr>
-            
-            <td colspan="2"><div align="center" style="padding-right: 20pt;">
-                <input value="Limpar" type="reset"></div></td>
-            <td colspan="2"><div align="center" style="padding-left: 20pt;">
-                <input value="Enviar" type="submit" onclick="submitform()"></div>
-                <iframe id="conteudo" style="display: none"></iframe></td>
-            
-        </tr>
-    </table>
-    <table width="100%">
-        <tr>
-            <td><div align="left" style="padding-left: 50pt;">
-                <input value="Retornar" type="button" onclick="returnpage(-1)"></div>
-            </td>
-            <td><div align="right" style="padding-right: 50pt;">
-                <input value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
-            </td>
-        </tr>
-    </table>
-    <!-- fim botones --></form>
+    <tr>
+        <td><div align="left" style="padding-left: 0pt;">
+            <input class="btn_return" value="Retornar" type="button" onclick="returnpage(-1)"></div>
+        </td>
+        <td><div align="right" style="padding-right: 0pt;">
+            <input class="btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+        </td>
+    </tr>
+</table>
+</div>
+
+<!-- fim botones -->
+</form>
 </BODY>
 </HTML>
 

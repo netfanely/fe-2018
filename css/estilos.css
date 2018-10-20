@@ -14,7 +14,7 @@
     width:386px;
     padding: 10px;
     margin: auto;
-    height:280px;
+    height:380px;
 
 }
 fieldset{
@@ -22,7 +22,7 @@ fieldset{
     border: 3px solid green;
     padding: 15px;
     width:386px;
-    height:260px;
+    height:360px;
     border-radius: 20px;
 }
 legend{

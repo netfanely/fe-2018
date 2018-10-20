@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-<title>Cadastro de Pacientes</title>
+<title>Cadastro de Pacientes - Resumo</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
 <script type="text/javascript">
-    var urls = new Array("resumo.html");
+    var urls = new Array("index.html");
     function nextpage(){
         window.location = urls[Math.floor(urls.length*Math.random())];
     }
@@ -12,8 +12,8 @@
         //pagina anterior
         history.go(a);
     }
-    function submitform(){
-        alert("Sending Json");
+    function printform(){
+        alert("Imprimiendo documento");
         var xhr = new XMLHttpRequest();
         xhr.open(form.method, form.action, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
@@ -52,45 +52,9 @@
 <form id="formulario" action="resumo.html" method="POST" name="myForm">
             <fieldset>
 <table align="center">
-<th><legend>Vinculos</legend></th>
+<th><legend>Resumo</legend></th>
 <tr>
-<td><label>Identificador</label></td><td><label>Relacionamento</label></td><td><label>Data Inicial</label></td><td><label>Data final</label></td>
-</tr>
-<tr>
-   <td><input class="idin" type="text" size="10"></td>
-   <td>
-        <input list="idin" name="dir" id="dir" />
-        <datalist id="idin">
-          <option value="Avo materna" />
-          <option value="Avo materno" />
-          <option value="Conjuge companheiro a" />
-          <option value="Irmao" />
-          <option value="Irma" />
-          <option value="Meio-Irmao" />
-          <option value="Meio-Irma" />
-          <option value="Irmaos" />
-          <option value="Crianca" />
-          <option value="Filha" />
-          <option value="Avo paterna" />
-          <option value="Avo paterno" />
-          <option value="Tio materno" />
-          <option value="Tio paterno" />
-          <option value="Tia paterna" />
-          <option value="Recem nascido" />
-          <option value="Pais" />
-          <option value="Mae adotiva" />
-          <option value="Pai adotivo" />
-          <option value="Responsavel" />
-          <option value="Coabitante" />
-          <option value="Tia materna" />
-        </datalist>
-   </td>
-   <td>
-        <input class="dini" type="text" name="dini" id="dini" value="mm/dd/aaaa" />
-   </td>
-   <td>
-        <input class="dfin" type="text" name="dfin" id="dfin" value="mm/dd/aaaa" />
-   </td>
+    <td>Datos do paciente cadastrado</td>
 </tr>
 </table>
 <!-- botones -->
@@ -100,9 +64,9 @@
         <tr>
             
             <td colspan="2"><div align="center" style="padding-right: 20pt;">
-                <input class="btn_limpar" value="Limpar" type="reset"></div></td>
+                <!--input class="btn_limpar" value="Limpar" type="reset"--></div></td>
             <td colspan="2"><div align="center" style="padding-left: 20pt;">
-                <input class="btn_enviar" value="Enviar" type="submit" onclick="submitform()"></div>
+                <input class="btn_enviar" value="Imprimir" type="submit" onclick="printform()"></div>
                 <iframe id="conteudo" style="display: none"></iframe></td>
             
         </tr>
@@ -115,7 +79,7 @@
                 <input class="btn_return" value="Retornar" type="button" onclick="returnpage(-1)"></div>
             </td>
             <td><div align="right" style="padding-right: 0pt;">
-                <input class="btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+                <input class="btn_next" value="Finalizar" type="button" onclick="javascript:nextpage()"></div>
             </td>
         </tr>
     </table>
