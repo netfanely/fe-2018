@@ -2,6 +2,44 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
+<script type="text/javascript">
+    var urls = new Array("nomes.html");
+    function nextpage(){
+        //nomes.html
+        window.location = urls[Math.floor(urls.length*Math.random())];
+    }
+    function returnpage(a){
+        //pagina anterior
+        history.go(a);
+    }
+    function submitform(){
+        alert("Sending Json");
+        var xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action, true);
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        var j = {
+            "tidentificador":"dirs1",
+            "ageografica":"dirs2",
+            "designacao":"designacao",
+            "emisor":"emisor",
+        };
+        xhr.send(JSON.stringify(j));
+        this.salvar();
+    }
+    function salvar() {
+       document.getElementById('conteudo').document.designMode = 'On';
+       var conteudo = '';
+
+       conteudo += "tidentificador: "+document.getElementById('dirs1').value+"<br>";
+       conteudo += "ageografica: "+document.getElementById('dirs2').value+"<br>";
+       conteudo += "designacao: "+document.getElementById('designacao').value+"<br>";
+       conteudo += "emisor: "+document.getElementById('emisor').value+"<br>";
+    
+       frames['conteudo'].document.body.innerHTML = conteudo;
+    
+       frames['conteudo'].document.execCommand('SaveAs',false,'arquivo.txt');
+}
+</script>
 </head>
 <BODY>
     <center>
@@ -66,8 +104,31 @@
       
 
 </table>
-<div align="left">retornar</div><div align="right">>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-</form>
+<!-- botones -->
+<table align="center" border="0">
+        <th><td><br></td><td></td></th>
+        <th><td><br></td><td></td></th>
+        <tr>
+            
+            <td colspan="2"><div align="center" style="padding-right: 20pt;">
+                <input value="Limpar" type="reset"></div></td>
+            <td colspan="2"><div align="center" style="padding-left: 20pt;">
+                <input value="Enviar" type="submit" onclick="submitform()"></div>
+                <iframe id="conteudo" style="display: none"></iframe></td>
+            
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td><div align="left" style="padding-left: 50pt;">
+                <input value="Retornar" type="button" onclick="returnpage(-1)"></div>
+            </td>
+            <td><div align="right" style="padding-right: 50pt;">
+                <input value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+            </td>
+        </tr>
+    </table>
+    <!-- fim botones --></form>
 </BODY>
 </HTML>
 

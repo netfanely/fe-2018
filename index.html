@@ -2,7 +2,17 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 <script type="text/javascript">
+    var urls = new Array("nomes.html");
+    function nextpage(){
+        window.location = urls[Math.floor(urls.length*Math.random())];
+    }
+    function returnpage(a){
+        //pagina anterior
+        history.go(a);
+    }
+
     function submitform(){
         alert("Sending Json");
         var xhr = new XMLHttpRequest();
@@ -33,19 +43,24 @@
 </script>
 </head>
 <BODY>
+  
     <center>
 <H1>CADASTRO DE PACIENTES</H1>
     </center>
 <BR>
-<CENTER>Identificador | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER>
+<h3><CENTER>Identificador | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<form action="nomes.html" method="POST" name="myForm">
+<div id="area">
+<form id="formulario" action="nomes.html" method="POST" name="myForm">
+    <fieldset>
 <table align="center">
+
+<th><legend>Identificador</legend></th>    
 <tr>
-<td>Tipo do identificador</td><td>Area geografica</td>
+<td><label>Tipo do identificador</label></td><td><label>Area geografica</label></td>
 </tr>
 <tr>
-<td><input list="dirs1" name="dir1" id="dir1" />
+<td><input class="tipoiden" list="dirs1" name="dir1" id="dir1" />
     <datalist id="dirs1">
       <option value="Unico dentro da organizacao" />
       <option value="Numero do prontuario" />
@@ -53,7 +68,7 @@
       <option value="Patologia" />
       <option value="Farmacia" />
     </datalist></td>
-<td><input list="dirs2" name="dir2" id="dir2" />
+<td><input class="areageo" list="dirs2" name="dir2" id="dir2" />
         <datalist id="dirs2">
           <option value="Local" />
           <option value="Area regiao distrito" />
@@ -62,29 +77,51 @@
         </datalist></td>
 </tr>
 <tr>
-<td>Designacao</td><td>Data</td>
+<td><label>Designacao</label></td><td><label>Data</label></td>
 </tr>
 <tr>
-<td><input type="text" name="designacao" /></td><td><input type="text" name="data" value="mm/dd/aaaa" /></td>
+<td><input class="designacao" type="text" name="designacao" /></td><td><input type="text" name="data" value="mm/dd/aaaa" /></td>
 </tr>
 <tr>
-<td>Emissor</td><td></td>
+<td><label>Emissor</label></td><td></td>
 </tr>
 <tr>
-<td><input type="text" name="emisor" /></td><td></td>
+<td><input class="emisor" type="text" name="emisor" /></td><td></td>
 </tr>
 </table>
+<!-- botones -->
 <table align="center" border="0">
-    <th><td><br></td></th><th><td><br></td></th>
+    <th><td><br></td><td></td></th>
+    <th><td><br></td><td></td></th>
     <tr>
-        <td>Retornar</td><td>Limpar</td>
-        <td><input value="Enviar" type="submit" onclick="submitform()">
+        
+        <td colspan="2"><div align="center" style="padding-right: 20pt;">
+            <input class="btn_limpar" value="Limpar" type="reset"></div></td>
+        <td colspan="2"><div align="center" style="padding-left: 20pt;">
+            <input class="btn_enviar" value="Enviar" type="submit" onclick="submitform()"></div>
             <iframe id="conteudo" style="display: none"></iframe></td>
-        <td>Siguiente</td>
+        
+    </tr>
+</table></fieldset>
+<table width="100%">
+        <th><td><br></td><td></td></th>
+        <th><td><br></td><td></td></th>
+    <tr>
+        <td><div align="left" style="padding-left: 0pt;">
+            <input class="btn_return" value="Retornar" type="button" onclick="returnpage(-1)"></div>
+        </td>
+        <td><div align="right" style="padding-right: 0pt;">
+            <input class="btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+        </td>
     </tr>
 </table>
-<div align="right">>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+<!-- fim botones -->
+
 </form>
+
+
 </BODY>
 </HTML>
 

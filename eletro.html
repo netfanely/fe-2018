@@ -2,23 +2,65 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+<script type="text/javascript">
+  var urls = new Array("vinculos.html");
+  function nextpage(){
+      //nomes.html
+      window.location = urls[Math.floor(urls.length*Math.random())];
+  }
+  function returnpage(a){
+      //pagina anterior
+      history.go(a);
+  }
+
+  function submitform(){
+      alert("Sending Json");
+      var xhr = new XMLHttpRequest();
+      xhr.open(form.method, form.action, true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      var j = {
+          "tidentificador":"dirs1",
+          "ageografica":"dirs2",
+          "designacao":"designacao",
+          "emisor":"emisor",
+      };
+      xhr.send(JSON.stringify(j));
+      this.salvar();
+  }
+  function salvar() {
+     document.getElementById('conteudo').document.designMode = 'On';
+     var conteudo = '';
+
+     conteudo += "tidentificador: "+document.getElementById('dirs1').value+"<br>";
+     conteudo += "ageografica: "+document.getElementById('dirs2').value+"<br>";
+     conteudo += "designacao: "+document.getElementById('designacao').value+"<br>";
+     conteudo += "emisor: "+document.getElementById('emisor').value+"<br>";
+  
+     frames['conteudo'].document.body.innerHTML = conteudo;
+  
+     frames['conteudo'].document.execCommand('SaveAs',false,'arquivo.txt');
+}
+</script>
 </head>
 <BODY>
     <center>
 <H1>CADASTRO DE PACIENTES</H1>
     </center>
 <BR>
-<CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco">Enderecos</a> | Comunicacoes eletronicos | Vinculos</CENTER>
+<h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | Comunicacoes eletronicos | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<form action="#" method="get">
+<div id="area"></div>
+<form id="formulario" action="vinculos.html" method="POST" name="myForm">
+    <fieldset>
 <table align="center">
-<th>Comunicacoes eletronicas</th>
+<th colspan="4"><legend>Comunicacoes eletronicas</legend><br></th>
 <tr>
-<td>Meio</td><td>telefone</td><td>Preferencia</td><td>Utilizacao</td>
+<td><label>Meio</label></td><td><label>telefone</label></td><td><label>Preferencia</label></td><td><label>Utilizacao</label></td>
 </tr>
 <tr>
-<td><input list="dirs" name="dir" id="dir" />
-    <datalist id="dirs">
+<td><input class="meio" list="meio" name="dir" id="dir" />
+    <datalist id="meio">
       <option value="Telefone" />
       <option value="Celular" />
       <option value="Fax" />
@@ -27,32 +69,59 @@
       <option value="URL" />
     </datalist>
 </td>    
-   <td><input type="text" size="20"></td>
+   <td><input class="telefone" type="text" size="20"></td>
    <td>
-        <input list="dirs" name="dir" id="dir" />
-        <datalist id="dirs">
-          <option value="Horario comercial" />
-          <option value="Durante o dia" />
-          <option value="Finais de semana" />
-          <option value="Qualquer hora" />
-          <option value="Periodo noturno" />
+        <input class="preferencia" list="preferencia" name="dir" id="dir" />
+        <datalist id="preferencia">
+                <option value="Horario comercial" />
+                <option value="Durante o dia" />
+                <option value="Finais de semana" />
+                <option value="Qualquer hora" />
+                <option value="Periodo noturno" />
         </datalist>
    </td>
    <td>
-        <input list="dirs" name="dir" id="dir" />
-        <datalist id="dirs">
+        <input class="utilizacao" list="utilizacao" name="dir" id="dir" />
+        <datalist id="utilizacao">
           <option value="Comercial" />
           <option value="Pessoal" />
           <option value="Comercial ou pessoal" />
         </datalist>
-   </td>
 
+   </td>
 </tr>
       
 
 </table>
-<div align="left">retornar</div><div align="right">>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<!-- botones -->
+<table align="center" border="0">
+    <th>        <td><br></td><td></td></th>
+    <tr>
+        
+        <td colspan="2"><div align="center" style="padding-right: 20pt;">
+            <input value="Limpar" type="reset"></div></td>
+        <td colspan="2"><div align="center" style="padding-left: 20pt;">
+            <input value="Enviar" type="submit" onclick="submitform()"></div>
+            <iframe id="conteudo" style="display: none"></iframe></td>
+        
+    </tr>
+</table></fieldset>
+<table width="100%">
+        <th><td><br></td><td></td></th>
+        <th><td><br></td><td></td></th>
+    <tr>
+        <td><div align="left" style="padding-left: 50pt;">
+            <input value="Retornar" type="button" onclick="returnpage(-1)"></div>
+        </td>
+        <td><div align="right" style="padding-right: 50pt;">
+            <input value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
+        </td>
+    </tr>
+</table>
+</div>
+<!-- fim botones -->
 </form>
+
 </BODY>
 </HTML>
 
