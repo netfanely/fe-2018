@@ -1,7 +1,7 @@
 Sabado 20 Outubro 2018
 ----------------------
-- Centrar recuadro verde,
-- botones dentro de recuadro
+[x]- Centrar recuadro verde, 
+[x]- botones dentro de recuadro
 - Caja de texto de fechas, mostrar calendario
 - Verificar acentos
 - insertar setas en imagen
@@ -9,7 +9,5 @@ Sabado 20 Outubro 2018
 - nome.html > Nome completo (que muestre el nombre completo en label class="completo"
 
 ** leer documento para validar recuadros.
-** mejora visual com imagenes (tema hospital)
-** Que la pagina sea responsiva. --> BULMA.IO
-
-
+[x]** mejora visual com imagenes (tema hospital)
+** Que la pagina sea responsiva.
