@@ -174,7 +174,7 @@ button:focus {
 
 <div class="content">
 <label>Identificador</label>
-<input id="email" class="idin" type="text" size="10"><br>
+<input id="email" class="idin" type="text" size="10">
 <label>Relacionamento</label>
         <input id="email" class="relac" list="relac" name="dir" id="dir" />
         <datalist id="relac">
@@ -200,11 +200,17 @@ button:focus {
           <option value="Responsavel" />
           <option value="Coabitante" />
           <option value="Tia materna" />
-        </datalist><br>
-   <label>Data Inicial</label>  
-   <input id="email" class="dini" type="text" name="dini" id="dini" value="mm/dd/aaaa" /><br>
-   <label>Data Final</label>
-   <input id="email" class="dfin" type="text" name="dfin" id="dfin" value="mm/dd/aaaa" />
+        </datalist>
+<div class="field">
+  <div class="control">
+      <label>Data Inicial</label>  
+      <input class="input" type="date" name="dini" id="dini" value="mm/dd/aaaa" /><br>
+
+      <label>Data Final</label>
+      <input class="input" type="date" name="dfin" id="dfin" value="mm/dd/aaaa" />
+   
+  </div>
+</div>        
 
 </div>
 <div id="area">

@@ -156,6 +156,84 @@ button:focus {
 </script>
 </head>
 <BODY>
+    <script>
+        
+            function novoNome() {
+        
+              var panel = document.getElementById("paraAnimar");
+        
+              var estilo = panel.style;
+        
+              if (estilo.maxHeight) {
+        
+                estilo.maxHeight = null;
+        
+              } else {
+        
+                estilo.maxHeight = panel.scrollHeight + "px";
+        
+              }
+        
+            }
+        
+        
+        
+            function animar() {
+        
+              var obj = document.getElementById("paraAnimar").classList;
+        
+              if (obj.contains("zoomIn")) {
+        
+                obj.remove("zoomIn");
+        
+                obj.add("zoomOut");
+        
+              } else {
+        
+                obj.remove("zoomOut");
+        
+                obj.add("zoomIn");
+        
+              }
+        
+        
+        
+            }
+        
+        
+        
+            function toggle(obj) {
+        
+              var icone = obj.childNodes[1].childNodes[1];
+        
+        
+        
+              if (icone.classList.contains('fa-square-o')) {
+        
+                icone.classList.remove("fa-square-o");
+        
+                icone.classList.add("fa-check-square-o");
+        
+              } else {
+        
+                icone.classList.remove("fa-check-square-o");
+        
+                icone.classList.add("fa-square-o");
+        
+              }
+        
+        
+        
+            }
+        
+        
+        
+          </script>
+           <a class="button is-info" onclick="novoNome()">
+              
+                  <span>Nome</span>
+              
+                </a>
     <center>
     <IMG SRC="img/banerclinica.jpg">
     </center>
@@ -173,16 +251,24 @@ button:focus {
     <div class="card-title"><h1>Nome</h1></div>
     <div class="content">
     <label>Nome</label>
-    <input id="email" class="nome" type="text" name="nome" size="40"/>
+    <input id="nome" class="input" type="text" name="nome" size="40" oninput="nomeChanged()" />
     <label>Sobrenome</label>
-    <input id="email" class="sobrenome" type="text" name="sobrenome" size="40"/>
+    <input id="sobrenome" class="input" type="text" name="sobrenome" size="40"  oninput="nomeChanged()" />
     <label>Titulo</label>
-    <input  id="email" class="titulo" type="text" name="titulo" value="Prof., Dr., ..." />
+    <input id="titulo" class="input" type="text" name="titulo" value="Prof., Dr., ..."  oninput="nomeChanged()" />
     <label>Sufixo</label>
-    <input id="email" type="text" name="sufixo" value="Junior, Filho.." />
+    <input id="sufixo" class="input" type="text" name="sufixo" value="Junior, Filho.."  oninput="nomeChanged()" />
+<div class="field">
     <label>Nome Completo</label><br>
-    <label class="completo" for="completo">--preencha os campos --</label>
-    <br>
+    <div class="control">
+      <div class="text">
+          <label id="nome-completo" class="is-small" for="completo">--preencha os campos --</label>
+      </div>
+    </div>
+</div>
+    
+
+    <br><br>
     <label>Uso</label>
     <input id="email" class="uso" list="uso" name="dir" id="dir" />
     <datalist id="dirs">

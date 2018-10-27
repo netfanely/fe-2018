@@ -2,7 +2,7 @@ Sabado 20 Outubro 2018
 ----------------------
 [x]- Centrar recuadro verde, 
 [x]- botones dentro de recuadro
-- Caja de texto de fechas, mostrar calendario
+[x]- Caja de texto de fechas, mostrar calendario
 - Verificar acentos
 - insertar setas en imagen
 - botones con imagen tipo icono

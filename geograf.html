@@ -182,18 +182,26 @@ button:focus {
 <input id="email" type="text" name="sufixo" value="Junior, Filho, ..." />
 
 <label>Situacao familiar (convive com):</label><br>
+<font size=-1>
 <input class="opc1" type="checkbox" name="opc1" value="semfilhos">
-<label for="semfilhos">companheiro(a) com lacos conjugais e sem filhos</label><br>
+<label for="semfilhos">Companheiro(a) com lacos conjugais e sem filhos</label><br>
 <input class="opc2" type="checkbox" name="opc2" value="familiares">
-<label for="familiares"></label>companheiro(a) com filho(s) e/ou outro(s) familiar(es)</label><br>
+<label for="familiares"></label>Companheiro(a) com filho(s) e/ou outro(s) familiar(es)</label><br>
 <input class="opc3" type="checkbox" name="opc3" value="companheiro">
-<label for="companheiro"></label>familiar(es) sem companheiro(a)</label><br>
+<label for="companheiro"></label>Familiar(es) sem companheiro(a)</label><br>
 <input class="opc4" type="checkbox" name="opc4" value="conjugais">
-<label for="conjugais"></label>outra(s) pessoa(s) sem lacos consaguineos e/ou lacos conjugais</label><br>
+<label for="conjugais"></label>Outra(s) pessoa(s) sem lacos consaguineos e/ou lacos conjugais</label><br>
 <input class="opc5" type="checkbox" name="opc5" value="so">
-<label for="so">vive so</label><br>
+<label for="so">Vive so</label><br>
+</font>
 <br>
-<label>Data de nascimento : </label><input type="text" name="dir" id="dir" value="mm/dd/aaaa" size="10"/>
+<!--campo de fecha (data)-->
+<div class="field">
+  <div class="control">
+    <label>Data de nascimento : </label><input class="input" type="date" name="nasc" value="mm/dd/aaaa" />
+  </div>
+</div>
+<!--fin de campo-->
 </div>
 <div id="area">
 <!-- botones -->
