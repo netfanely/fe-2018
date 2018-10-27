@@ -2,7 +2,121 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+<link rel="stylesheet" type="text/css" href="css/estilos2.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css'>
+    <style class="cp-pen-styles">#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F7F7F7;
+}
+#login .login-card {
+  background: #fff;
+  width: 24rem;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
+}
+#login .login-card .card-title {
+  background-color: #00b89c;
+  padding: 2rem;
+}
+#login .login-card .card-title h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#login .login-card .content {
+  padding: 3rem 2.5rem 5rem;
+}
+#login .login-card #email, #login .login-card #password {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  padding: 0.25rem 0;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  transition: all .5s;
+}
+#login .login-card #email:hover, #login .login-card #password:hover {
+  border-color: #7a7a7a;
+
+}
+#login .login-card #email:active, #login .login-card #email:focus, #login .login-card #password:active, #login .login-card #password:focus {
+  border-color: #00d1b2;
+}
+#login .login-card .checkbox {
+  color: #b5b5b5;
+  font-size: 0.8rem;
+}
+#login .login-card .checkbox span {
+  margin-left: 0.5rem;
+}
+#login .login-card a {
+  font-size: 0.8rem;
+}
+#login .login-card .options {
+  color: #b5b5b5;
+  margin-bottom: 1.5rem;
+}
+#login .login-card button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #00d1b2;
+  border-radius: 4rem;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 2px solid #00d1b2;
+  padding: 0.9rem 0 1.1rem;
+  transition: color .5s, border-color .5s;
+}
+#login .login-card button:hover, #login .login-card button:focus {
+  color: #009e86;
+  border-color: #009e86;
+}
+#login .login-card button:active {
+  transform: translateY(1px);
+}
+
+label {
+  cursor: pointer;
+}
+
+.regular-checkbox {
+  display: none;
+}
+
+.regular-checkbox + label {
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.regular-checkbox:checked + label {
+  background-color: #e9ecee;
+}
+
+.regular-checkbox:checked + label:after {
+  content: '\2714';
+  font-size: 11px;
+  position: absolute;
+  top: 0;
+  left: 3px;
+  color: #b5b5b5;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+</style>
 <script type="text/javascript">
     var urls = new Array("eletro.html");
     function nextpage(){
@@ -43,21 +157,22 @@
 </head>
 <BODY>
     <center>
-<H1>CADASTRO DE PACIENTES</H1>
+    <H1>CADASTRO DE PACIENTES</H1>
     </center>
 <BR>
 <h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | Enderecos | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<div id="area"></div>
+<div id="login">
+<div id="area">
+  
 <form id="formulario" action="eletro.html" method="POST" name="myForm">
     <fieldset>
-<table align="center">
-<th><legend>Enderecos</legend></th>
-<tr>
-<td colspan="2"><label>Tipo de endereco</label></td>
-</tr>
-<tr>
-<td colspan="2"><input class="tende" list="tende" name="dir" id="dir" />
+<div class="login-card">
+<div class="card-title"><h1>Enderecos</h1></div>
+<div class="content">
+
+<label>Tipo de endereco</label>
+<input id="email" class="tende" list="tende" name="dir" id="dir" />
     <datalist id="tende">
       <option value="Comercial" />
       <option value="Correio ou postal" />
@@ -65,77 +180,69 @@
       <option value="Sem endereco fixo" />
       <option value="Desconhecido nao declarado" />
     </datalist>
-</td>    
-</tr>
-<tr>
-  <td colspan="2"><br><label>Data Inicial</label></td>
-</tr>
-<tr>
-   <td colspan="2"><input class="dini" type="text" value="mm/dd/aaaa"></td>
-</tr>
-<tr>
-   <td colspan="2"><br><label>Iniciador de acuracia</label></td>
-</tr>
-<tr>
-   <td colspan="2"><label>Dia:</label><input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-</tr>
-<tr>
-   <td colspan="2"><label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-</tr>
-<tr>
-   <td colspan="2"><label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-</tr>
-<tr>
-        <td colspan="2"><br><label>Data Final</label></td>
-      </tr>
-      <tr>
-         <td colspan="2"><input type="text" value="mm/dd/aaaa"></td>
-      </tr>
-      <tr>
-         <td colspan="2"><br><label>Iniciador de acuracia</label></td>
-      </tr>
-      <tr>
-         <td colspan="2"><label>Dia:</label><input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-      </tr>
-      <tr>
-         <td colspan="2"><label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-      </tr>
-      <tr>
-         <td colspan="2"><label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label></td>
-      </tr>
+<label>Data Inicial</label>
+<input id="email" class="dini" type="text" value="mm/dd/aaaa">
+<label>Iniciador de acuracia</label><br>
+
+   <label>Dia :</label><input type="radio" name="dia" value="acurado">
+   <label for="acurado">acurado</label><input type="radio" name="dia" value="estimado">
+   <label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label>
+
+  <label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label>
+
+  <label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label><br>
+
+  <br><label>Data Final</label>
+      <input type="text" value="mm/dd/aaaa">
+      
+  <br><br><label>Iniciador de acuracia</label><br>
+      <label>Dia :</label><input type="radio" name="dia" value="acurado"><label for="acurado">acurado</label><input type="radio" name="dia" value="estimado"><label for="estimado">estimado</label><input type="radio" name="dia" value="desconhecido"><label for="desconhecido">Desconhecido</label>
+      
+      <label>Mes:</label><input type="radio" name="mes" value="acurado"><label for="acurado">acurado</label><input type="radio" name="mes" value="estimado"><label for="estimado">estimado</label><input type="radio" name="mes" value="desconhecido"><label for="desconhecido">Desconhecido</label>
+      
+      <label>Ano:</label><input type="radio" name="ano" value="acurado"><label for="acurado">acurado</label><input type="radio" name="ano" value="estimado"><label for="estimado">estimado</label><input type="radio" name="ano" value="desconhecido"><label for="desconhecido">Desconhecido</label>
+      
       
 
-</table>
+</div>
+<div id="area">
 <!-- botones -->
-<table align="center" border="0">
+<table align="center" border="0" width="100%">
+    <tr>
+        
+        <td colspan="3">
+            <div class="btn centered">
+              <button type="reset" class="btn btn_limpar">   Limpar  </button>
+            </div>
+        </td>
+        <td colspan="3">
+            <div class="btn centered">
+              <button type="submit" class="btn btn_enviar" onclick="submitform()">    Enviar    </button>
+            </div>
+        </td>
+        
+    </tr>
+</table>
+</fieldset>
+</div></div>
+<div id="area">
+<table width="100%">
         <th><td><br></td><td></td></th>
         <th><td><br></td><td></td></th>
-        <tr>
-            
-            <td colspan="2"><div align="center" style="padding-right: 20pt;">
-                <input class="btn_limpar" value="Limpar" type="reset"></div></td>
-            <td colspan="2"><div align="center" style="padding-left: 20pt;">
-                <input class="btn_enviar" value="Enviar" type="submit" onclick="submitform()"></div>
-                <iframe id="conteudo" style="display: none"></iframe></td>
-            
-        </tr>
-    </table></fieldset>
-    <table width="100%">
-            <th><td><br></td><td></td></th>
-            <th><td><br></td><td></td></th>
-        <tr>
-            <td><div align="left" style="padding-left: 0pt;">
-                <input class="btn_return" value="Retornar" type="button" onclick="returnpage(-1)"></div>
-            </td>
-            <td><div align="right" style="padding-right: 0pt;">
-                <input class="btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
-            </td>
-        </tr>
-    </table>
-    </div>
-    
-    <!-- fim botones -->
-    </form>
+    <tr>
+        <td><div align="left" style="padding-left: 0pt;">
+              <button type="submit" class="btn btn_return" value="Retornar" type="button" onclick="returnpage(-1)">    Retornar</button>
+            </div>
+        </td>
+        <td>    <div align="right" style="padding-right: 0pt;">
+              <button type="submit" class="btn btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()">    Siguiente    </button>
+            </div>
+    </tr>
+</table>
+</div>
+<!-- fim botones -->
+</div></div>
+</form>
 </BODY>
 </HTML>
 

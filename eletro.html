@@ -2,7 +2,121 @@
 <HTML>
 <head>
 <title>Cadastro de Pacientes</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+   <link rel="stylesheet" type="text/css" href="css/estilos2.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css'>
+    <style class="cp-pen-styles">#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F7F7F7;
+}
+#login .login-card {
+  background: #fff;
+  width: 24rem;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
+}
+#login .login-card .card-title {
+  background-color: #00b89c;
+  padding: 2rem;
+}
+#login .login-card .card-title h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#login .login-card .content {
+  padding: 3rem 2.5rem 5rem;
+}
+#login .login-card #email, #login .login-card #password {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  padding: 0.25rem 0;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  transition: all .5s;
+}
+#login .login-card #email:hover, #login .login-card #password:hover {
+  border-color: #7a7a7a;
+
+}
+#login .login-card #email:active, #login .login-card #email:focus, #login .login-card #password:active, #login .login-card #password:focus {
+  border-color: #00d1b2;
+}
+#login .login-card .checkbox {
+  color: #b5b5b5;
+  font-size: 0.8rem;
+}
+#login .login-card .checkbox span {
+  margin-left: 0.5rem;
+}
+#login .login-card a {
+  font-size: 0.8rem;
+}
+#login .login-card .options {
+  color: #b5b5b5;
+  margin-bottom: 1.5rem;
+}
+#login .login-card button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #00d1b2;
+  border-radius: 4rem;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 2px solid #00d1b2;
+  padding: 0.9rem 0 1.1rem;
+  transition: color .5s, border-color .5s;
+}
+#login .login-card button:hover, #login .login-card button:focus {
+  color: #009e86;
+  border-color: #009e86;
+}
+#login .login-card button:active {
+  transform: translateY(1px);
+}
+
+label {
+  cursor: pointer;
+}
+
+.regular-checkbox {
+  display: none;
+}
+
+.regular-checkbox + label {
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.regular-checkbox:checked + label {
+  background-color: #e9ecee;
+}
+
+.regular-checkbox:checked + label:after {
+  content: '\2714';
+  font-size: 11px;
+  position: absolute;
+  top: 0;
+  left: 3px;
+  color: #b5b5b5;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+</style>
 <script type="text/javascript">
   var urls = new Array("vinculos.html");
   function nextpage(){
@@ -50,16 +164,18 @@
 <BR>
 <h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | Comunicacoes eletronicos | <a href="vinculos.html">Vinculos</a></CENTER></h3>
 <br><br>
-<div id="area"></div>
+
+<div id="login">
+<div id="area">
 <form id="formulario" action="vinculos.html" method="POST" name="myForm">
     <fieldset>
-<table align="center">
-<th colspan="4"><legend>Comunicacoes eletronicas</legend><br></th>
-<tr>
-<td><label>Meio</label></td><td><label>telefone</label></td><td><label>Preferencia</label></td><td><label>Utilizacao</label></td>
-</tr>
-<tr>
-<td><input class="meio" list="meio" name="dir" id="dir" />
+
+<div class="login-card">
+<div class="card-title"><h1>Comunicacoes eletronicas</h1></div>
+<div class="content">
+<label>Meio</label>
+
+<input id="email" class="meio" list="meio" name="dir" id="dir" />
     <datalist id="meio">
       <option value="Telefone" />
       <option value="Celular" />
@@ -68,10 +184,11 @@
       <option value="Email" />
       <option value="URL" />
     </datalist>
-</td>    
-   <td><input class="telefone" type="text" size="20"></td>
-   <td>
-        <input class="preferencia" list="preferencia" name="dir" id="dir" />
+<label>telefone</label>
+<input id="email" class="telefone" type="text" size="20">
+
+<label>Preferencia</label>
+<input id="email"class="preferencia" list="preferencia" name="dir" id="dir" />
         <datalist id="preferencia">
                 <option value="Horario comercial" />
                 <option value="Durante o dia" />
@@ -79,49 +196,55 @@
                 <option value="Qualquer hora" />
                 <option value="Periodo noturno" />
         </datalist>
-   </td>
+<label>Utilizacao</label>
    <td>
-        <input class="utilizacao" list="utilizacao" name="dir" id="dir" />
+        <input id="email" class="utilizacao" list="utilizacao" name="dir" id="dir" />
         <datalist id="utilizacao">
           <option value="Comercial" />
           <option value="Pessoal" />
           <option value="Comercial ou pessoal" />
         </datalist>
 
-   </td>
-</tr>
-      
 
-</table>
+</div>
+<div id="area">
 <!-- botones -->
-<table align="center" border="0">
-    <th>        <td><br></td><td></td></th>
+<table align="center" border="0" width="100%">
     <tr>
         
-        <td colspan="2"><div align="center" style="padding-right: 20pt;">
-            <input value="Limpar" type="reset"></div></td>
-        <td colspan="2"><div align="center" style="padding-left: 20pt;">
-            <input value="Enviar" type="submit" onclick="submitform()"></div>
-            <iframe id="conteudo" style="display: none"></iframe></td>
+        <td colspan="3">
+            <div class="btn centered">
+              <button type="reset" class="btn btn_limpar">   Limpar  </button>
+            </div>
+        </td>
+        <td colspan="3">
+            <div class="btn centered">
+              <button type="submit" class="btn btn_enviar" onclick="submitform()">    Enviar    </button>
+            </div>
+        </td>
         
     </tr>
-</table></fieldset>
+</table>
+</fieldset>
+</div></div>
+<div id="area">
 <table width="100%">
         <th><td><br></td><td></td></th>
         <th><td><br></td><td></td></th>
     <tr>
-        <td><div align="left" style="padding-left: 50pt;">
-            <input value="Retornar" type="button" onclick="returnpage(-1)"></div>
+        <td><div align="left" style="padding-left: 0pt;">
+              <button type="submit" class="btn btn_return" value="Retornar" type="button" onclick="returnpage(-1)">    Retornar</button>
+            </div>
         </td>
-        <td><div align="right" style="padding-right: 50pt;">
-            <input value="Siguiente" type="button" onclick="javascript:nextpage()"></div>
-        </td>
+        <td>    <div align="right" style="padding-right: 0pt;">
+              <button type="submit" class="btn btn_next" value="Siguiente" type="button" onclick="javascript:nextpage()">    Siguiente    </button>
+            </div>
     </tr>
 </table>
 </div>
 <!-- fim botones -->
+</div></div>
 </form>
-
 </BODY>
 </HTML>
 
