@@ -45,6 +45,16 @@
        frames['conteudo'].document.execCommand('SaveAs',false,'arquivo.txt');
 }
 </script>
+<script>
+  $(function(){
+    $('.btn-loading').on('click',function(){
+            $btn = $(this).button('loading');
+      setTimeout(function(){
+              $btn.button('reset');
+       rad      },1000);
+  });
+});
+</script>
 <style>
 @media only screen and (max-width: 959px) {
     label{
@@ -171,18 +181,8 @@ Vive so</label><br>
 <!-- fim botones -->
 </div></div>
 </form></div></div></div>  </DIV></DIV>
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script>
-  $(function(){
-    $('.btn-loading').on('click',function(){
-            $btn = $(this).button('loading');
-      setTimeout(function(){
-              $btn.button('reset');
-       rad      },1000);
-  });
-});
-</script>
+
+
 </BODY>
 </HTML>
 
