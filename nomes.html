@@ -1,122 +1,14 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-<title>Cadastro de Pacientes</title>
-   <link rel="stylesheet" type="text/css" href="css/estilos2.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css'>
-    <style class="cp-pen-styles">#login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #F7F7F7;
-}
-#login .login-card {
-  background: #fff;
-  width: 24rem;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
-}
-#login .login-card .card-title {
-  background-color: #00b89c;
-  padding: 2rem;
-}
-#login .login-card .card-title h1 {
-  color: #fff;
-  text-align: center;
-  font-size: 1.2rem;
-}
-#login .login-card .content {
-  padding: 3rem 2.5rem 5rem;
-}
-#login .login-card #email, #login .login-card #password {
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  margin-bottom: 1.75rem;
-  padding: 0.25rem 0;
-  border: none;
-  border-bottom: 1px solid #dbdbdb;
-  transition: all .5s;
-}
-#login .login-card #email:hover, #login .login-card #password:hover {
-  border-color: #7a7a7a;
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cadastro de Pacientes</title>
+    <meta name="description" content="TRABALHO FRONT END">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap-->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
-}
-#login .login-card #email:active, #login .login-card #email:focus, #login .login-card #password:active, #login .login-card #password:focus {
-  border-color: #00d1b2;
-}
-#login .login-card .checkbox {
-  color: #b5b5b5;
-  font-size: 0.8rem;
-}
-#login .login-card .checkbox span {
-  margin-left: 0.5rem;
-}
-#login .login-card a {
-  font-size: 0.8rem;
-}
-#login .login-card .options {
-  color: #b5b5b5;
-  margin-bottom: 1.5rem;
-}
-#login .login-card button {
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: #00d1b2;
-  border-radius: 4rem;
-  display: block;
-  width: 100%;
-  background: transparent;
-  border: 2px solid #00d1b2;
-  padding: 0.9rem 0 1.1rem;
-  transition: color .5s, border-color .5s;
-}
-#login .login-card button:hover, #login .login-card button:focus {
-  color: #009e86;
-  border-color: #009e86;
-}
-#login .login-card button:active {
-  transform: translateY(1px);
-}
-
-label {
-  cursor: pointer;
-}
-
-.regular-checkbox {
-  display: none;
-}
-
-.regular-checkbox + label {
-  background-color: #fafafa;
-  border: 1px solid #dbdbdb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  padding: 7px;
-  border-radius: 3px;
-  display: inline-block;
-  position: relative;
-}
-
-.regular-checkbox:checked + label {
-  background-color: #e9ecee;
-}
-
-.regular-checkbox:checked + label:after {
-  content: '\2714';
-  font-size: 11px;
-  position: absolute;
-  top: 0;
-  left: 3px;
-  color: #b5b5b5;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-</style>
 <script type="text/javascript">
     var urls = new Array("geograf.html");
     function nextpage(){
@@ -154,115 +46,100 @@ button:focus {
        frames['conteudo'].document.execCommand('SaveAs',false,'arquivo.txt');
 }
 </script>
-</head>
-<BODY>
-    <script>
-        
+<style>
+@media only screen and (max-width: 959px) {
+    label{
+        font-size: 11px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    h2{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    h1{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    h3{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    p{
+        font-size: 7px;
+    }
+}
+</style>
+   <script>
             function novoNome() {
-        
               var panel = document.getElementById("paraAnimar");
-        
               var estilo = panel.style;
-        
               if (estilo.maxHeight) {
-        
                 estilo.maxHeight = null;
-        
               } else {
-        
                 estilo.maxHeight = panel.scrollHeight + "px";
-        
               }
-        
             }
-        
-        
-        
             function animar() {
-        
               var obj = document.getElementById("paraAnimar").classList;
-        
               if (obj.contains("zoomIn")) {
-        
                 obj.remove("zoomIn");
-        
                 obj.add("zoomOut");
-        
               } else {
-        
                 obj.remove("zoomOut");
-        
                 obj.add("zoomIn");
-        
               }
-        
-        
-        
             }
-        
-        
-        
             function toggle(obj) {
-        
               var icone = obj.childNodes[1].childNodes[1];
-        
-        
-        
               if (icone.classList.contains('fa-square-o')) {
-        
                 icone.classList.remove("fa-square-o");
-        
                 icone.classList.add("fa-check-square-o");
-        
               } else {
-        
                 icone.classList.remove("fa-check-square-o");
-        
                 icone.classList.add("fa-square-o");
-        
               }
-        
-        
-        
             }
-        
-        
-        
-          </script>
-           <a class="button is-info" onclick="novoNome()">
-              
-                  <span>Nome</span>
-              
-                </a>
-    <center>
-    <IMG SRC="img/banerclinica.jpg">
-    </center>
-<BR>
-<h3><CENTER><a href="index.html">Identificador</a> | Nomes | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
-<br>
+   </script>
+</head>
+<BODY onLoad="novoNome()">
 
-  <div id="login">
+<div class="container">
+  <div class="row">
+      <div class="form-group">
+        <center>
+            <IMG SRC="img/banerclinica.jpg"  class="img-responsive center-block" alt="minha imagem" />
+        </center>
+        <BR>
+          <h3><CENTER><a href="index.html">Identificador</a> | Nomes | <a href="geograf.html">Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
+        <br>
+      </div>
+  </div>
+  <div class="jumbotron">
 
-  <div id="area">
-    <br><br>
-  <form id="formulario" action="geograf.html" method="POST" name="myForm">
-    <fieldset>
-    <div class="login-card">
-    <div class="card-title"><h1>Nome</h1></div>
-    <div class="content">
-    <label>Nome</label>
-    <input id="nome" class="input" type="text" name="nome" size="40" oninput="nomeChanged()" />
+ <!-- INICIO FORMULARIO-->
+  <div class="row">
+  <div class="form-group">
+    <h2>NOME</h2><BR>
+
+   <form id="formulario" action="geograf.html" method="POST" name="myForm" class="form-horizontal" style="margin:0 auto">
+      <div class="form-group" col-md-8>
+      <label for="nome">Nome</label>
+    <input id="nome" class="form-control" type="text" name="nome" size="40" oninput="nomeChanged()" />
     <label>Sobrenome</label>
-    <input id="sobrenome" class="input" type="text" name="sobrenome" size="40"  oninput="nomeChanged()" />
+    <input id="sobrenome" class="form-control" type="text" name="sobrenome" size="40"  oninput="nomeChanged()" />
     <label>Titulo</label>
-    <input id="titulo" class="input" type="text" name="titulo" value="Prof., Dr., ..."  oninput="nomeChanged()" />
+    <input id="titulo" class="form-control" type="text" name="titulo" value="Prof., Dr., ..."  oninput="nomeChanged()" />
     <label>Sufixo</label>
-    <input id="sufixo" class="input" type="text" name="sufixo" value="Junior, Filho.."  oninput="nomeChanged()" />
+    <input id="sufixo" class="form-control" class="input" type="text" name="sufixo" value="Junior, Filho.."  oninput="nomeChanged()" />
 <div class="field">
     <label>Nome Completo</label><br>
     <div class="control">
       <div class="text">
-          <label id="nome-completo" class="is-small" for="completo">--preencha os campos --</label>
+          <label id="nome-completo" class="form-control" for="completo">--preencha os campos --</label>
       </div>
     </div>
 </div>
@@ -270,38 +147,29 @@ button:focus {
 
     <br><br>
     <label>Uso</label>
-    <input id="email" class="uso" list="uso" name="dir" id="dir" />
-    <datalist id="dirs">
-      <option value="ReLatorio(R)" />
-      <option value="Nome de recem nascido (N)" />
-      <option value="Nome profissional ou comercial (C)" />
-      <option value="Nome de solteiro (nascimento)(original)" />
-      <option value="Nome registrado (nome legal)" />
-      <option value="Outro nome (alias)" />
-    </datalist>
+    <select id="dirs" class="form-control">
+      <option> ReLatorio(R) </option>
+      <option> Nome de recem nascido (N) </option>
+      <option> Nome profissional ou comercial (C) </option>
+      <option> Nome de solteiro (nascimento)(original) </option>
+      <option> Nome registrado (nome legal) </option>
+      <option> Outro nome (alias) </option>
+    </select>
 
 </div>
 <div id="area">
+<!-- FINAL DEL FORMULARIO-->
 <!-- botones -->
-<table align="center" border="0" width="100%">
-    <tr>
-        
-        <td colspan="3">
-            <div class="btn centered">
-              <button type="reset" class="btn btn_limpar">   Limpar  </button>
-            </div>
-        </td>
-        <td colspan="3">
-            <div class="btn centered">
-              <button type="submit" class="btn btn_enviar" onclick="submitform()">    Enviar    </button>
-            </div>
-        </td>
-        
-    </tr>
-</table>
-</fieldset>
-</div></div>
-<div id="area">
+  <div class="container">
+  <div align = "center">
+   <div class="btn-group" data-toggle="buttons">
+      <button class="btn btn-primary" type="radio" name="options" id="singlebutton"> Limpar</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-primary btn-loading" data-loading-text="Salvando, aguarde ..."> Enviar</button>   
+      </div></div> 
+      </div></div>  
+      </div></div></div>
+  <div class="row">
+  <div class="form-group">
 <table width="100%">
         <th><td><br></td><td></td></th>
         <th><td><br></td><td></td></th>
@@ -315,10 +183,22 @@ button:focus {
             </div>
     </tr>
 </table>
-</div>
+
 <!-- fim botones -->
 </div></div>
-</form>
+</form></div></div></div>  </DIV></DIV>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+  $(function(){
+    $('.btn-loading').on('click',function(){
+            $btn = $(this).button('loading');
+      setTimeout(function(){
+              $btn.button('reset');
+       rad      },1000);
+  });
+});
+</script>
 </BODY>
 </HTML>
 
