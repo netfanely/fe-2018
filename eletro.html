@@ -90,17 +90,15 @@
       </div>
   </div>
   <!--fin cabecera-->
-
-<br>
-
-<div class="jumbotron">
+  <div class="jumbotron">
   <!-- INICIO FORMULARIO-->
   <div class="row">
   <div class="form-group">
   <h1>Comunicacoes eletronicas</h1><br>
+
   <form id="formulario" action="vinculos.html" method="POST" name="myForm" class="form-horizontal" style="margin:0 auto">
   <div class="form-group" col-md-8>
-  <label for="meio">Meio</label>
+        <label for="meio">Meio</label>
   <select class="form-control">
       <option> Telefone </option>
       <option> Celular </option>
@@ -111,11 +109,11 @@
     </select>
     </div>
     <div class ="form-group">
-<label for="telefone">telefone</label>
-<input id="email" class ="form-group" type="text" size="20">
+    <label for="telefone">telefone</label>
+    <input id="telefone" class ="form-control" type="text" size="20">
 
-<label>Preferencia</label>
-<input id="email" class ="form-group" list="preferencia" name="dir" id="dir" />
+    <label>Preferencia</label>
+    <input id="preferencia" class="form-control" list="preferencia" name="dir" id="dir" />
         <datalist id="preferencia">
                 <option value="Horario comercial" />
                 <option value="Durante o dia" />
@@ -124,7 +122,7 @@
                 <option value="Periodo noturno" />
         </datalist>
 <label>Utilizacao</label>
-        <input id="email" class ="form-group" list="utilizacao" name="dir" id="dir" />
+        <input id="utilizacao" class="form-control" list="utilizacao" name="dir" id="dir" />
         <datalist id="utilizacao">
           <option value="Comercial" />
           <option value="Pessoal" />

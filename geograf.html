@@ -1,123 +1,14 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-<title>Cadastro de Pacientes</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos2.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css'>
-    <style class="cp-pen-styles">#login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #F7F7F7;
-}
-#login .login-card {
-  background: #fff;
-  width: 24rem;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
-}
-#login .login-card .card-title {
-  background-color: #00b89c;
-  padding: 2rem;
-}
-#login .login-card .card-title h1 {
-  color: #fff;
-  text-align: center;
-  font-size: 1.2rem;
-}
-#login .login-card .content {
-  padding: 3rem 2.5rem 5rem;
-}
-#login .login-card #email, #login .login-card #password {
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  margin-bottom: 1.75rem;
-  padding: 0.25rem 0;
-  border: none;
-  border-bottom: 1px solid #dbdbdb;
-  transition: all .5s;
-}
-#login .login-card #email:hover, #login .login-card #password:hover {
-  border-color: #7a7a7a;
-
-}
-#login .login-card #email:active, #login .login-card #email:focus, #login .login-card #password:active, #login .login-card #password:focus {
-  border-color: #00d1b2;
-}
-#login .login-card .checkbox {
-  color: #b5b5b5;
-  font-size: 0.8rem;
-}
-#login .login-card .checkbox span {
-  margin-left: 0.5rem;
-}
-#login .login-card a {
-  font-size: 0.8rem;
-}
-#login .login-card .options {
-  color: #b5b5b5;
-  margin-bottom: 1.5rem;
-}
-#login .login-card button {
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: #00d1b2;
-  border-radius: 4rem;
-  display: block;
-  width: 100%;
-  background: transparent;
-  border: 2px solid #00d1b2;
-  padding: 0.9rem 0 1.1rem;
-  transition: color .5s, border-color .5s;
-}
-#login .login-card button:hover, #login .login-card button:focus {
-  color: #009e86;
-  border-color: #009e86;
-}
-#login .login-card button:active {
-  transform: translateY(1px);
-}
-
-label {
-  cursor: pointer;
-}
-
-.regular-checkbox {
-  display: none;
-}
-
-.regular-checkbox + label {
-  background-color: #fafafa;
-  border: 1px solid #dbdbdb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  padding: 7px;
-  border-radius: 3px;
-  display: inline-block;
-  position: relative;
-}
-
-.regular-checkbox:checked + label {
-  background-color: #e9ecee;
-}
-
-.regular-checkbox:checked + label:after {
-  content: '\2714';
-  font-size: 11px;
-  position: absolute;
-  top: 0;
-  left: 3px;
-  color: #b5b5b5;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-</style>
-<script type="text/javascript">
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cadastro de Pacientes</title>
+    <meta name="description" content="TRABALHO FRONT END">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap-->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
     var urls = new Array("endereco.html");
     function nextpage(){
         window.location = urls[Math.floor(urls.length*Math.random())];
@@ -154,76 +45,115 @@ button:focus {
        frames['conteudo'].document.execCommand('SaveAs',false,'arquivo.txt');
 }
 </script>
+<style>
+@media only screen and (max-width: 959px) {
+    label{
+        font-size: 11px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    h2{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    h1{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    h3{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    p{
+        font-size: 7px;
+    }
+}
+</style>
 </head>
+
 <BODY>
-    <center>
-    <IMG SRC="img/banerclinica.jpg">
-    </center>
-<BR>
-<h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3>
-<br>
+<!--inicio cabecera -->
+<div class="container">
+  <div class="row">
+    <div class="form-group">
+       <center>
+     <IMG SRC="img/banerclinica.jpg"  class="img-responsive center-block" alt="minha imagem" />
+       </center><BR>
+<h3><CENTER><a href="index.html">Identificador</a> | <a href="nomes.html">Nomes</a> | Dados Geograficos</a> | <a href="endereco.html">Enderecos</a> | <a href="eletro.html">Comunicacoes eletronicos</a> | <a href="vinculos.html">Vinculos</a></CENTER></h3><br>
+    </div>
+  </div>
+  <!-- falta un div -->
+  <!--fin cabecera -->
+<!-- INICIO FORMULARIO-->
+ <div class="jumbotron">
+  <div class="row">
+  <div class="form-group">
+  <h2>Dados demograficos</h2><br>
 
-<div id="login">
-<div id="area">  <br>  <br>  <br>  <br>
-
-<form id="formulario" action="endereco.html" method="POST" name="myForm">
-    <fieldset>
-<div class="login-card">
-
-<div class="card-title"><h1>Dados demograficos</h1></div>
-
-<div class="content">
-
-<label>Mae</label>
-<input id="email" class="mae" type="text" name="mae" value="nome completo da mae" size="50"/>
+  <form id="formulario" action="endereco.html" method="POST" name="myForm" class="form-horizontal" style="margin:0 auto">
+  <div class="form-group" col-md-8>
+  <label for="mae">Mae</label>
+  <input id="email" class="form-control" type="text" name="mae" value="nome completo da mae" size="50"/>
 <label>Pai</label>
-<input id="email" class="mae" type="text" name="pai" value="nome completo do pai" size="50"/>
+<input id="email" class="form-control" type="text" name="pai" value="nome completo do pai" size="50"/>
 <label>Sufixo</label>
-<input id="email" type="text" name="sufixo" value="Junior, Filho, ..." />
+<input id="email" class="form-control" type="text" name="sufixo" value="Junior, Filho, ..." />
 
 <label>Situacao familiar (convive com):</label><br>
 <font size=-1>
-<input class="opc1" type="checkbox" name="opc1" value="semfilhos">
-<label for="semfilhos">Companheiro(a) com lacos conjugais e sem filhos</label><br>
-<input class="opc2" type="checkbox" name="opc2" value="familiares">
-<label for="familiares"></label>Companheiro(a) com filho(s) e/ou outro(s) familiar(es)</label><br>
-<input class="opc3" type="checkbox" name="opc3" value="companheiro">
-<label for="companheiro"></label>Familiar(es) sem companheiro(a)</label><br>
-<input class="opc4" type="checkbox" name="opc4" value="conjugais">
-<label for="conjugais"></label>Outra(s) pessoa(s) sem lacos consaguineos e/ou lacos conjugais</label><br>
-<input class="opc5" type="checkbox" name="opc5" value="so">
-<label for="so">Vive so</label><br>
+<div class="checkbox">
+<!--input class="form-control" type="checkbox" name="opc1" value="semfilhos"-->
+ <label>
+  <input type="checkbox" id="semfilhos">Companheiro(a) com lacos conjugais e sem filhos</label>
+ <br>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" id="familiares" name="opc2" value="familiares">
+Companheiro(a) com filho(s) e/ou outro(s) familiar(es)</label><br>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" id="companheiro" name="opc3" value="companheiro">
+Familiar(es) sem companheiro(a)</label><br>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="opc4" value="conjugais" id="conjugais">
+Outra(s) pessoa(s) sem lacos consaguineos e/ou lacos conjugais</label><br>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="opc5" value="so">
+Vive so</label><br>
+</div>
+
 </font>
 <br>
 <!--campo de fecha (data)-->
 <div class="field">
   <div class="control">
-    <label>Data de nascimento : </label><input class="input" type="date" name="nasc" value="mm/dd/aaaa" />
+    <label>Data de nascimento : </label><input class="form-control" type="date" name="nasc" value="mm/dd/aaaa" />
   </div>
 </div>
 <!--fin de campo-->
 </div>
 <div id="area">
+<!-- FINAL DEL FORMULARIO-->
 <!-- botones -->
-<table align="center" border="0" width="100%">
-    <tr>
-        
-        <td colspan="3">
-            <div class="btn centered">
-              <button type="reset" class="btn btn_limpar">   Limpar  </button>
-            </div>
-        </td>
-        <td colspan="3">
-              <div class="btn centered">
-              <button type="submit" class="btn btn_enviar" onclick="submitform()">    Enviar    </button>
-            </div>
-        </td>
-        
-    </tr>
-</table>
-</fieldset>
-</div></div>
-<div id="area">
+  <div class="container">
+  <div align = "center">
+   <div class="btn-group" data-toggle="buttons">
+      <button class="btn btn-primary" type="radio" name="options" id="singlebutton"> Limpar</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-primary btn-loading" data-loading-text="Salvando, aguarde ..."> Enviar</button>   
+      </div></div> 
+      </div></div>  
+      </div></div></div>
+  <div class="row">
+  <div class="form-group">
 <table width="100%">
         <th><td><br></td><td></td></th>
         <th><td><br></td><td></td></th>
@@ -237,9 +167,22 @@ button:focus {
             </div>
     </tr>
 </table>
-</div>
+
 <!-- fim botones -->
 </div></div>
-</form>
+</form></div></div></div>  </DIV></DIV>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+  $(function(){
+    $('.btn-loading').on('click',function(){
+            $btn = $(this).button('loading');
+      setTimeout(function(){
+              $btn.button('reset');
+       rad      },1000);
+  });
+});
+</script>
 </BODY>
 </HTML>
+
