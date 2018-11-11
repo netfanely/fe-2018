@@ -6,4 +6,4 @@ ALUNA: FANNY PASTOR
 
 TECNOLOGIA APLICADA AO TRABALHO: BOOTSTRAP - JAVASCRIPT - CSS
 
-PAGINA WEB: http://www.netfanely.com/fe-2018/vinculos.html
+PAGINA WEB: http://www.netfanely.com/fe-2018/
